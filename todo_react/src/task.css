@@ -1,0 +1,55 @@
+.hidden {
+    display: none;
+}
+
+.complete {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.btn {
+    border: none;
+    background-color: #f9d51a;
+    cursor: pointer;
+    margin: 5px 8px;
+    font-size: 0.8em;
+}
+
+.divingLine {
+    border: 1px solid #dfdfdf;
+    padding: 0;
+    font-size: 0;
+    margin: 3px;
+    height: 0;
+}
+
+.btn:hover {
+    box-shadow: 0 0 4px 2px #999999;
+}
+
+.addTaskBtn {
+    border: none;
+    opacity: 0.5;
+    font-size: 1.5em;
+    border-radius: 5%;
+    color: #1b1b1b;
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 3px 5px;
+}
+
+.addTaskBtn:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.item-content, .editItem, .inputContent {
+    box-shadow: 0 0 10px 2px #999999;
+    margin: 15px 0;
+    padding: 3px 5px;
+    font-size: 1.2em;
+}
+
+.inputBox {
+    padding: 3px 5px;
+}

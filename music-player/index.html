@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>音乐播放器</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <audio src="./src/0.mp3" data-index="0"></audio>
+        <div class="background-pic"></div>
+        <div class="container">
+            <img class="music-cover" src="./images/0.jpg" alt="music-cover" title="cover">
+            <div class="music-info">
+                <div class="song-name">XXX</div>
+                <div class="singer">XXX</div>
+                <div class="music-progress">
+                    <div class="current-time">--:--</div>
+                    <div class="music-progress-range">
+                        <div class="music-progress-bar"></div>
+                    </div>
+                    <div class="total-time">--:--</div>
+                </div>
+            </div>
+            <div class="music-control">
+                <div class="btn-play">
+                    <div class="btnPlay"></div>
+                </div>
+                <div class="btnNext"></div>
+                <div class="btnvolume"></div>
+                <div class="volume-progress-range">
+                    <div class="volume-progress-bar">
+                        <div class="volume-progress-point"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/regular.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>

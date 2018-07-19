@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图演示</title>
+    <style>
+        .container {
+            width: 700px;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .pic {
+            display: none;
+            width: 700px;
+            height: 500px;
+        }
+        .show {
+            display: inline-block !important;
+        }
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: black;
+            color: #fff;
+            height: 50px;
+            width: 30px;
+            border: none;
+            outline: 0;
+            opacity: 0.3;
+        }
+        #left-btn {
+            left: 0;
+        }
+        #right-btn {
+            right: 0;
+        }
+        .dot-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: red;
+        }
+        .active {
+            background: white;
+        }
+    </style>
+</head>
+    <div class="container" data-index="0">
+        <img src="images/1.jpg" class="pic show" data-index="0">
+        <img src="images/2.jpg" class="pic" data-index="1">
+        <img src="images/3.jpg" class="pic" data-index="2">
+        <button id="left-btn" class="btn">&lt;</button>
+        <button id="right-btn" class="btn">&gt;</button>
+        <div class="dot-container">
+            <span data-index="0" class="dot active"></span>
+            <span data-index="1" class="dot"></span>
+            <span data-index="2" class="dot"></span>
+        </div>
+    </div>
+<body>
+    <script src="regular.js"></script>
+    <script>
+        var switchPic = function (index) {
+            removeClassAll('show')
+            var container = e('.container')
+            var pic = es('.pic')
+            for (var i = 0; i < pic.length; i++) {
+                if (pic[i].dataset.index === String(index)) {
+                    pic[i].classList.add('show')
+                    container.dataset.index = String(index)
+                }
+            }
+        }
+
+        var switchDot = function (index) {
+            removeClassAll('active')
+            var dot = es('.dot')
+            for (var i = 0; i < dot.length; i++) {
+                if (dot[i].dataset.index === String(index)) {
+                    dot[i].classList.toggle('active')
+                }
+            }
+        }
+
+        var ClickBtn = function () {
+            var o = {
+                'left-btn': 3 - 1,
+                'right-btn': 1,
+            }
+            o.func = function (id) {
+                var container = e('.container')
+                var index = Number(container.dataset.index)
+                index = (index + o[id]) % 3
+                switchPic(index)
+                switchDot(index)
+            }
+            return o
+        }
+
+        var bindEventBtn = function () {
+            bindAll('.btn', 'click', function (event) {
+                var self = event.target
+                var c = new ClickBtn()
+                c.func(self.id)
+            })
+        }
+
+        var bindEventDot = function () {
+            bindAll('.dot', 'mouseover', function (event) {
+                var self = event.target
+                var index = Number(self.dataset.index)
+                switchPic(index)
+                switchDot(index)
+            })
+        }
+
+        var autoSwitchPic = function () {
+            setInterval(function () {
+                var container = e('.container')
+                var index = Number(container.dataset.index)
+                index = (index + 1) % 3
+                switchPic(index)
+                switchDot(index)
+            }, 3000)
+        }
+
+        var __main = function () {
+            bindEventBtn()
+            bindEventDot()
+            autoSwitchPic()
+        }
+
+        __main()
+    </script>
+</body>
+</html>

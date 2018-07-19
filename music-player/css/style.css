@@ -1,0 +1,152 @@
+main {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(255, 255, 255);
+    z-index: -2;
+}
+
+.background-pic {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../images/0.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(90px);
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.container {
+    border-radius: 3px;
+    z-index: 1;
+    width: 700px;
+    height: 250px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    font-family: poppin, "PingFang SC", Tahoma, Arial, 微软雅黑, sans-serif;
+}
+
+.music-cover {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.music-info {
+    font-size: 1.5em;
+    margin: 20px;
+    width: 410px;
+    height: 170px;
+}
+
+.music-info .song-name {
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.music-info .singer {
+    height: 15px;
+    padding-top: 10px;
+    font-size: 0.6em;
+    margin-bottom: 50px;
+}
+
+.music-progress {
+    font-size: 0.6em;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.music-progress .music-progress-range {
+    width: 330px;
+    height: 2px;
+    background-color: #cccccc;
+}
+
+.music-progress .music-progress-range .music-progress-bar {
+    height: 2px;
+    width: 0;
+    background-color: #646464;
+}
+
+.music-control {
+    display: flex;
+    flex-flow: row;
+    width: 450px;
+    height: 30px;
+    justify-content: start;
+    align-items: center;
+}
+
+.btnPlay, .btnPause, .btnNext, .btnvolume {
+    background-image: url("../images/c1.png");
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.btnPlay {
+    background-position: 0 0;
+}
+
+.btnPause {
+    background-position: 0 -20px;
+}
+
+.btnNext {
+    background-position: 0 -40px;
+}
+
+.btnvolume {
+    background-position: 0 -60px;
+    cursor: auto;
+}
+
+.volume-progress-range {
+    width: 60px;
+    height: 2px;
+    margin: 5px;
+    background: #cbcbcb;
+    position: relative;
+}
+
+.volume-progress-range .volume-progress-bar {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #646464;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.volume-progress-range .volume-progress-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-image: url("../images/c1.png");
+    background-position-y: -200px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 55px;
+}

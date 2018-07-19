@@ -1,0 +1,12 @@
+.time-title {
+    padding: 3px 5px;
+    margin: 0;
+    font-size: 1em;
+    background-color: #f9d51a;
+    box-shadow: 0 0 10px 2px #999999;
+}
+
+.date {
+    color: #878588;
+    font-size: 0.75em;
+}
